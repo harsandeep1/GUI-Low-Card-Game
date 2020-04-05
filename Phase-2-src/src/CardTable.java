@@ -39,7 +39,7 @@ public class CardTable extends JFrame
       pn1PlayArea = new JPanel();
       Border PlayAreaBorder = BorderFactory.createTitledBorder("Play Area");
       pn1PlayArea.setBorder(PlayAreaBorder);
-      pn1PlayArea.setLayout(new GridLayout(2, numPlayers));
+      pn1PlayArea.setLayout(new GridLayout(1, numPlayers + 1));
       
       this.add(pn1ComputerHand);
       this.add(pn1PlayArea);

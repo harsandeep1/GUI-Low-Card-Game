@@ -1,32 +1,44 @@
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class testCardTable
 {
 
    public static void main(String[] args)
    {
+      int computerScore = 0;
+      int humanScore = 0;
+      
       // establish main frame in which program will run
       CardTable myCardTable = new CardTable("CardTable", 7, 2);
       myCardTable.setSize(800, 600);
       myCardTable.setLocationRelativeTo(null);
       myCardTable.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
+      Icon iconBack = new ImageIcon("images/" + "BK" + ".gif");
+      
       //Create Jlabels
-      JLabel card1, card2, computer, human;
-      card1 = new JLabel("Card #1");
-      card1.setHorizontalAlignment(JLabel.CENTER);
-      card2 = new JLabel("Card #2");
-      card2.setHorizontalAlignment(JLabel.CENTER);
+      JLabel computer, human, blank;
       computer = new JLabel("Computer");
+      computer.setIcon(iconBack);
       computer.setHorizontalAlignment(JLabel.CENTER);
+      computer.setVerticalTextPosition(SwingConstants.BOTTOM);
+      computer.setHorizontalTextPosition(SwingConstants.CENTER);
       human = new JLabel("Human");
+      human.setIcon(iconBack);
       human.setHorizontalAlignment(JLabel.CENTER);
+      human.setVerticalTextPosition(SwingConstants.BOTTOM);
+      human.setHorizontalTextPosition(SwingConstants.CENTER);
+      blank = new JLabel();
+      blank.setHorizontalAlignment(JLabel.CENTER);
+      blank.setText("Computer: " + computerScore + " | Human: " + humanScore);
       
       //Add jlabels to play area
-      myCardTable.pn1PlayArea.add(card1);
-      myCardTable.pn1PlayArea.add(card2);
       myCardTable.pn1PlayArea.add(computer);
+      myCardTable.pn1PlayArea.add(blank);
       myCardTable.pn1PlayArea.add(human);
 
       // show everything to the user
@@ -35,32 +47,62 @@ public class testCardTable
       //Pause Program
       try
       {
-         Thread.sleep(1000);
+         Thread.sleep(2000);
       } catch (InterruptedException e)
       {
          // TODO Auto-generated catch block
          e.printStackTrace();
       }
       
-      //Reset card1 and card2 labels
-      card1.setText("");
-      card2.setText("");
+      //Display winner
+      blank.setText("You win!");
+      humanScore++; //Update score
       //Repaint jpanel
       myCardTable.pn1PlayArea.repaint();
       
       //Pause Program
       try
       {
-         Thread.sleep(1000);
+         Thread.sleep(2000);
       } catch (InterruptedException e)
       {
          // TODO Auto-generated catch block
          e.printStackTrace();
       }
       
-      //Reset card1 and card2 labels
-      card1.setText("Card #3");
-      card2.setText("Card #4");
+      //Display score
+      blank.setText("Computer: " + computerScore + " | Human: " + humanScore);
+      //Repaint jpanel
+      myCardTable.pn1PlayArea.repaint();
+      
+      //Pause Program
+      try
+      {
+         Thread.sleep(2000);
+      } catch (InterruptedException e)
+      {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+      
+      //Display winner
+      blank.setText("Computer wins!");
+      computerScore++; //Update score
+      //Repaint jpanel
+      myCardTable.pn1PlayArea.repaint();
+      
+      //Pause Program
+      try
+      {
+         Thread.sleep(2000);
+      } catch (InterruptedException e)
+      {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+      
+      //Display score
+      blank.setText("Computer: " + computerScore + " | Human: " + humanScore);
       //Repaint jpanel
       myCardTable.pn1PlayArea.repaint();
    }
