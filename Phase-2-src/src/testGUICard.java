@@ -34,16 +34,19 @@ public class testGUICard
       frmMyWindow.setLayout(layout);
 
       // prepare the image label array
+      Icon tempIcon; //test
+      Card tempCard; //test
       JLabel[] labels = new JLabel[NUM_CARD_IMAGES];
-      for(int i = 0; i < NUM_CARD_IMAGES - 2; i++)
-         labels[i] = new JLabel(cardIcons.getIcon(deck.dealCard()));
+      System.out.println("Max cards: " + NUM_CARD_IMAGES);
+      for(int i = 0; i <= NUM_CARD_IMAGES - 2; i++)
+         labels[i] = new JLabel(GUICard.getIcon(deck.dealCard()));
       
       //Add card back to labels array
-      labels[NUM_CARD_IMAGES - 1] = new JLabel(cardIcons.getBackCardIcon());
+      labels[NUM_CARD_IMAGES - 1] = new JLabel(GUICard.getBackCardIcon());
       
       // place cards in frame
-      for (JLabel label : labels)
-         frmMyWindow.add(label);
+      for (int i = 0; i < NUM_CARD_IMAGES; i++)
+         frmMyWindow.add(labels[i]);
 
       // show everything to the user
       frmMyWindow.setVisible(true);

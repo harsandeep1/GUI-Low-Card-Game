@@ -25,7 +25,7 @@ public class GUICard
       // instantiate each of the 56 Icons in a 2d array + set the iconBack as well.
       for(int numSuit = 0; numSuit < 4; numSuit++)
       {
-         for(int numCardValue = 0; numCardValue <= 13; numCardValue++)
+         for(int numCardValue = 0; numCardValue < 14; numCardValue++)
          {
             iconCards[numCardValue][numSuit] = new ImageIcon("images/" + 
                   intToCardValue(numCardValue) + intToSuit(numSuit) + ".gif");
@@ -42,6 +42,9 @@ public class GUICard
    //Returns: Icon
    static public Icon getIcon(Card card)
    {
+      if(iconsLoaded == false)
+         return new ImageIcon();
+      
       int cardValueNum = cardValueToInt(card.getValue());
       int suitNum = suitToInt(card.getSuit());
       if(cardValueNum == -1 || suitNum == -1)
@@ -52,6 +55,9 @@ public class GUICard
    
    static public Icon getBackCardIcon()
    {
+      if(iconsLoaded == false)
+         return new ImageIcon();
+      
       return iconBack;
    }
    
