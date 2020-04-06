@@ -90,10 +90,6 @@ public class Deck
      */
    private static void allocateMasterPack()
    {
-      //contains possible card values, A(Ace), T(10), J(Jack), Q(Queen), 
-      //K(King), X(Joker)
-      char[] deckValues = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T',
-            'J', 'Q', 'K', 'X'};
       int x = 0;
       int deckValueCounter = 0;
       
@@ -110,7 +106,7 @@ public class Deck
                x++;
                deckValueCounter = 0;
             }
-            masterPack[i] = new Card(deckValues[deckValueCounter], 
+            masterPack[i] = new Card(Card.valuRanks[deckValueCounter], 
                   Card.Suit.values()[x]);
             deckValueCounter++;
          }
