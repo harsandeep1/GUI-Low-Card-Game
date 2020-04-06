@@ -38,7 +38,7 @@ public class testGUICard
       for(int i = 0; i < NUM_CARD_IMAGES - 2; i++)
          labels[i] = new JLabel(cardIcons.getIcon(deck.dealCard()));
       
-      //Add card back to label
+      //Add card back to labels array
       labels[NUM_CARD_IMAGES - 1] = new JLabel(cardIcons.getBackCardIcon());
       
       // place cards in frame

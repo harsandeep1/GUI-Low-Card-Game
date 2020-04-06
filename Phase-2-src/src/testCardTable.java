@@ -4,11 +4,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+//Test main for the CardTable class.
 public class testCardTable
 {
 
    public static void main(String[] args)
    {
+      //Set scores
       int computerScore = 0;
       int humanScore = 0;
       
