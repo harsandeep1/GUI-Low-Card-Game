@@ -42,7 +42,7 @@ public class GUICard
    //Returns: Icon
    static public Icon getIcon(Card card)
    {
-      int cardValueNum = valueToInt(card.getValue());
+      int cardValueNum = cardValueToInt(card.getValue());
       int suitNum = suitToInt(card.getSuit());
       if(cardValueNum == -1 || suitNum == -1)
          return iconBack;
@@ -60,7 +60,7 @@ public class GUICard
       return suitArray[numSuit]; 
    };
    
-   static private String intToCardValue(int numCardValue) 
+   static private char intToCardValue(int numCardValue) 
    { 
       return Card.valuRanks[numCardValue];
    };
