@@ -10,7 +10,7 @@ public class assig3
    
    public static void main(String[] args)
    {
-      final int DECK_SIZE = 52; //Numbers of cards in a deck
+      final int DECK_SIZE = 56; //Numbers of cards in a deck
       
       System.out.println("*********************************");
       System.out.println("Phase 3: The Deck Class");

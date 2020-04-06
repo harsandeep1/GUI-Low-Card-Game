@@ -19,7 +19,7 @@ public class handTest {
       System.out.println("Taking two cards initially...");
       System.out.println(hand);
       
-      hand.playCard();
+      hand.playCard(0);
       
       System.out.println("Here is the hand after playing one card: " + hand + "\n");
       
@@ -43,7 +43,7 @@ public class handTest {
       System.out.println(hand);
       
       while(hand.getNumCards() > 0){
-         System.out.println("Playing " + hand.playCard());
+         System.out.println("Playing " + hand.playCard(0));
       }
       
       System.out.println("After playing all cards");

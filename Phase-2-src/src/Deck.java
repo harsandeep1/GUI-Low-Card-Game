@@ -127,7 +127,7 @@ public class Deck
    public Card inspectCard(int k) {
 
       if (k < 0 || k > topCard){
-         return new Card('x');
+         return new Card('M');
       }
       return cards[k];
 
@@ -139,12 +139,13 @@ public class Deck
       //Check if number in deck is less than max.
       //This part: (cards.length / 56) checks how many decks are in use.
       //Each deck has a duplicate.
-      if(countInDeck(card) <= (cards.length / 56))
+      if(countInDeck(card) < (cards.length / 56))
       {
          //check if deck is already full.
-         if(cards.length <= getTopCard() - 1)
+         if(cards.length <= getTopCard() + 1)
          {
             //Return false since deck is already full.
+            topCard = cards.length - 1;
             return false;
          }
          else //Add card to the top of the deck.
@@ -166,7 +167,7 @@ public class Deck
    {
       for(int i = 0; i <= topCard; i++)
       {
-         if(card.equals(cards[i]) == true)
+         if(card.equals(cards[i]))
          {
             cards[i] = cards[getTopCard()];
             topCard--;
@@ -194,7 +195,7 @@ public class Deck
          if(card.equals(cards[i]))
             count++;     
       }
-      
+      System.out.println("\n\nThere are " + count + " " + card + " in the deck.");
       return count;
    }
 
