@@ -25,6 +25,7 @@ public class Assig5
                   + turnIntIntoCardSuit(j) + ".gif");
          }      
       }
+      icon[NUM_CARD_IMAGES - 1] = new ImageIcon("images/BK.gif");
    }
 
    // turns 0 - 13 into "A", "2", "3", ... "Q", "K", "X"
@@ -38,7 +39,6 @@ public class Assig5
       {
          value = index[k];
       }else{
-         System.out.println("returning defalut value A");
          return index[0];//returns default value "A".
       }
       return value;
@@ -54,7 +54,6 @@ public class Assig5
       {
          suit = index1[j];
       }else{
-         System.out.println("returning defalut suit C");
          return index1[0];//returns default value "A".
       }
       return suit;
