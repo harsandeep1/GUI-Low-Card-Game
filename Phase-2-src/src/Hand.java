@@ -60,7 +60,7 @@ public class Hand {
    //sort the hand by calling the arraySort() method in the Card class
    void sort()
    {
-      myCards.arraySort(myCards, myCards.length);
+      Card.arraySort(myCards, myCards.length);
    }
    
    //revised method that removes the card at a location and slides
@@ -70,7 +70,7 @@ public class Hand {
       if ( numCards == 0 ) //error
       {
          //Creates a card that does not work
-         return new Card('M', Card.Suit.spades);
+         return new Card('M', Card.Suit.SPADES);
       }
       
       //Decreases numCards.

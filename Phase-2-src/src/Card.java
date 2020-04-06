@@ -150,7 +150,7 @@ public class Card
    {
       boolean valueValid = false;
       
-    //iterates through all legal values and checks passedValue against them
+      //iterates through all legal values and checks passedValue against them
       for (char element : valuRanks)
       {
          if(element == passedValue)
