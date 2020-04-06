@@ -140,16 +140,27 @@ public class Deck
    //adds card to top of deck if there are not already too many of it in deck
    public boolean addCard(Card card)
    {
-      for(Card inCard : cards)
+      //Check if number in deck is less than max.
+      //This part: (cards.length / 56) checks how many decks are in use.
+      //Each deck has a duplicate.
+      if(countInDeck(card) <= (cards.length / 56))
       {
-         if(inCard.equals(card) == false)//if card is not in deck already
+         //check if deck is already full.
+         if(cards.length <= getTopCard() - 1)
          {
+            //Return false since deck is already full.
+            return false;
+         }
+         else //Add card to the top of the deck.
+         {
+            topCard++;
             cards[getTopCard()] = card;
             return true;
          }
-         else
-            return false;
       }
+      else //Deck already contains the max of given card.
+         return false;
+
    }
 
    //remove a specific card from the deck.  Put the current top card into 
