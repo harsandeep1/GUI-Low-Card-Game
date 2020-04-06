@@ -89,11 +89,11 @@ public class Card
    public static void arraySort(Card[] card, int arraySize) 
    {
       for(int i = 0; i < arraySize; i++)
-         for(int j = 0; j < (arraySize - i); j++)
+         for(int j = 0; j < (arraySize - i - 1); j++)
             if(cardValueToInt(card[j].value) > cardValueToInt(card[j + 1].value))
              {
                  //swap temp and arr[i]
-                 int temp = card[j];
+                 Card temp = card[j];
                  card[j] = card[j + 1];
                  card[j + 1] = temp;
              }   
