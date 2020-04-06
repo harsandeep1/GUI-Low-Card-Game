@@ -136,65 +136,60 @@ public class Deck
       return cards[k];
 
    }
- 
-  //method to  
-  public static equals(Card card)
-  {
-     if(this.value == card.value && this.suit == card.suit)
-        return true;
-     
-     else
-        return false;
-  }
-   
    
    //adds card to top of deck if there are not already too many of it in deck
-   public static boolean addCard(Card card)
+   public boolean addCard(Card card)
    {
-      for(Card inCard = new Card : cards)
+      for(Card inCard : cards)
       {
          if(inCard.equals(card) == false)//if card is not in deck already
          {
-            cards[getTopCard() + 1] = card;
+            cards[getTopCard()] = card;
             return true;
          }
          else
-            return false
+            return false;
+      }
    }
 
    //remove a specific card from the deck.  Put the current top card into 
    //its place.  Be sure the card you need is actually still in the deck, 
    //if not return false.
-   public static boolean removeCard(Card card)
+   public boolean removeCard(Card card)
    {
-      int index = 0;
-      
-      for(Card inCard : cards)
+      for(int i = 0; i <= topCard; i++)
       {
-         index++;
-         
-         if(inCard.equals(card) == true)
+         if(card.equals(cards[i]) == true)
          {
-            cards[index] = cards[getTopCard()];
+            cards[i] = cards[getTopCard()];
+            topCard--;
             return true;
          }
-      
-      else
-         return false;
       }
+      
+      return false;
    }
    
    //put all of the cards in the deck back into the right order by value
-   public static void sort()
+   public void sort()
    {
-      cards.arraySort(masterPack, masterPack.length);
+      Card.arraySort(cards, cards.length);
       
    }
 
-
-
-
-
+   //Counts the number of a given card in the deck.
+   private int countInDeck(Card card)
+   {
+      int count = 0;
+      
+      for(int i = 0; i <= topCard; i++)
+      {
+         if(card.equals(cards[i]))
+            count++;     
+      }
+      
+      return count;
+   }
 
 }
 
