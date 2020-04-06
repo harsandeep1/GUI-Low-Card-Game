@@ -17,12 +17,7 @@ public class Card
    
    private boolean errorFlag;
    
-   //contains possible card values, A(Ace), T(10), J(Jack), Q(Queen), K(King)
-   char[] allValues = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 
-         'T', 'J', 'Q', 'K', 'X'};//X for joker
-   
    //array holds char values with the smallest first
-   //Seems redundant, need to figure this array out
    public static char[] valuRanks = {'A', '2', '3', '4', '5', '6', '7', '8',
          '9', 'T', 'J', 'Q', 'K', 'X'};
    
@@ -156,7 +151,7 @@ public class Card
       boolean valueValid = false;
       
     //iterates through all legal values and checks passedValue against them
-      for (char element : allValues)
+      for (char element : valuRanks)
       {
          if(element == passedValue)
          {
