@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.util.Random;
+
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -27,7 +29,7 @@ public class assig5
       for(int i = 0; i < NUM_CARDS_PER_HAND; i++)
       {
          computerLabels[i] = new JLabel(GUICard.getBackCardIcon());
-         humanLabels[i] = new JLabel(GUICard.getIcon(new Card(Card.valuRanks[i])));
+         humanLabels[i] = new JLabel(GUICard.getIcon(randomCardGenerator()));
       }
       
       //For play area
@@ -60,5 +62,14 @@ public class assig5
       
       // show everything to the user
       myCardTable.setVisible(true);
+   }
+   
+   public static Card randomCardGenerator()
+   {
+      Random rand = new Random();
+      char cardValue = Card.valuRanks[rand.nextInt(14)];
+      Card.Suit cardSuit = Card.Suit.values()[rand.nextInt(4)];
+      
+      return new Card(cardValue, cardSuit);
    }
 }
