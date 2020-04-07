@@ -1,4 +1,3 @@
-//Phase 3 and Phase 4 Test Main
 //Used to test the Card, Hand, and Deck classes.
 //Author: Kevin Robell
 import java.util.Scanner; //For user input.
