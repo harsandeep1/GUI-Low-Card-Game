@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.util.Random;
+
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -27,21 +29,21 @@ public class assig5
       for(int i = 0; i < NUM_CARDS_PER_HAND; i++)
       {
          computerLabels[i] = new JLabel(GUICard.getBackCardIcon());
-         humanLabels[i] = new JLabel(GUICard.getIcon(new Card(Card.valuRanks[i])));
+         humanLabels[i] = new JLabel(GUICard.getIcon(randomCardGenerator()));
       }
       
       //For play area
-      JLabel computer, human, score;
-      computer = new JLabel("Computer");
-      computer.setIcon(GUICard.getIcon(new Card('K', Card.Suit.DIAMONDS)));
-      computer.setHorizontalAlignment(JLabel.CENTER);
-      computer.setVerticalTextPosition(SwingConstants.BOTTOM);
-      computer.setHorizontalTextPosition(SwingConstants.CENTER);
-      human = new JLabel("Human");
-      human.setIcon(GUICard.getIcon(new Card('2', Card.Suit.HEARTS)));
-      human.setHorizontalAlignment(JLabel.CENTER);
-      human.setVerticalTextPosition(SwingConstants.BOTTOM);
-      human.setHorizontalTextPosition(SwingConstants.CENTER);
+      JLabel score;
+      playedCardLabels[0] = new JLabel("Computer");
+      playedCardLabels[0].setIcon(GUICard.getIcon(new Card('K', Card.Suit.DIAMONDS)));
+      playedCardLabels[0].setHorizontalAlignment(JLabel.CENTER);
+      playedCardLabels[0].setVerticalTextPosition(SwingConstants.BOTTOM);
+      playedCardLabels[0].setHorizontalTextPosition(SwingConstants.CENTER);
+      playedCardLabels[1] = new JLabel("Human");
+      playedCardLabels[1].setIcon(GUICard.getIcon(new Card('2', Card.Suit.HEARTS)));
+      playedCardLabels[1].setHorizontalAlignment(JLabel.CENTER);
+      playedCardLabels[1].setVerticalTextPosition(SwingConstants.BOTTOM);
+      playedCardLabels[1].setHorizontalTextPosition(SwingConstants.CENTER);
       score = new JLabel();
       score.setHorizontalAlignment(JLabel.CENTER);
       score.setText("Computer wins!");
@@ -54,11 +56,20 @@ public class assig5
          myCardTable.pn1HumanHand.add(humanLabels[i]);
       }
       //Add jlabels to play area
-      myCardTable.pn1PlayArea.add(computer);
+      myCardTable.pn1PlayArea.add(playedCardLabels[0]);
       myCardTable.pn1PlayArea.add(score);
-      myCardTable.pn1PlayArea.add(human);
+      myCardTable.pn1PlayArea.add(playedCardLabels[1]);
       
       // show everything to the user
       myCardTable.setVisible(true);
+   }
+   
+   public static Card randomCardGenerator()
+   {
+      Random rand = new Random();
+      char cardValue = Card.valuRanks[rand.nextInt(14)];
+      Card.Suit cardSuit = Card.Suit.values()[rand.nextInt(4)];
+      
+      return new Card(cardValue, cardSuit);
    }
 }
