@@ -23,7 +23,7 @@ public class testCardTable
       Icon iconBack = new ImageIcon("images/" + "BK" + ".gif");
       
       //Create Jlabels
-      JLabel computer, human, blank;
+      JLabel computer, human, score;
       computer = new JLabel("Computer");
       computer.setIcon(iconBack);
       computer.setHorizontalAlignment(JLabel.CENTER);
@@ -34,13 +34,13 @@ public class testCardTable
       human.setHorizontalAlignment(JLabel.CENTER);
       human.setVerticalTextPosition(SwingConstants.BOTTOM);
       human.setHorizontalTextPosition(SwingConstants.CENTER);
-      blank = new JLabel();
-      blank.setHorizontalAlignment(JLabel.CENTER);
-      blank.setText("Computer: " + computerScore + " | Human: " + humanScore);
+      score = new JLabel();
+      score.setHorizontalAlignment(JLabel.CENTER);
+      score.setText("Computer: " + computerScore + " | Human: " + humanScore);
       
       //Add jlabels to play area
       myCardTable.pn1PlayArea.add(computer);
-      myCardTable.pn1PlayArea.add(blank);
+      myCardTable.pn1PlayArea.add(score);
       myCardTable.pn1PlayArea.add(human);
 
       // show everything to the user
@@ -57,7 +57,7 @@ public class testCardTable
       }
       
       //Display winner
-      blank.setText("You win!");
+      score.setText("You win!");
       humanScore++; //Update score
       //Repaint jpanel
       myCardTable.pn1PlayArea.repaint();
@@ -73,7 +73,7 @@ public class testCardTable
       }
       
       //Display score
-      blank.setText("Computer: " + computerScore + " | Human: " + humanScore);
+      score.setText("Computer: " + computerScore + " | Human: " + humanScore);
       //Repaint jpanel
       myCardTable.pn1PlayArea.repaint();
       
@@ -88,7 +88,7 @@ public class testCardTable
       }
       
       //Display winner
-      blank.setText("Computer wins!");
+      score.setText("Computer wins!");
       computerScore++; //Update score
       //Repaint jpanel
       myCardTable.pn1PlayArea.repaint();
@@ -104,7 +104,7 @@ public class testCardTable
       }
       
       //Display score
-      blank.setText("Computer: " + computerScore + " | Human: " + humanScore);
+      score.setText("Computer: " + computerScore + " | Human: " + humanScore);
       //Repaint jpanel
       myCardTable.pn1PlayArea.repaint();
    }
