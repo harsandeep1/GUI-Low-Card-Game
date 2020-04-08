@@ -199,7 +199,7 @@ public class Deck
          if(card.equals(cards[i]))
             count++;     
       }
-      System.out.println("\n\nThere are " + count + " " + card + " in the deck.");
+
       return count;
    }
 
