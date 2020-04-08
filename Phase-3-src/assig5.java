@@ -4,7 +4,7 @@ import javax.swing.border.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//Main for Phase 2
+//Main for Phase 3
 public class assig5 
 {
    static int NUM_CARDS_PER_HAND = 7;
