@@ -97,7 +97,7 @@ public class assig5
                            score.setText ("<html>Game Over <br> You Lost!</html>");
                         }
                         else {
-                           score.setText ("<html>Game Over <br> You Won!</html>");
+                           score.setText ("<html>Game Over <br> You Tied!</html>");
                         }
                     });
                     timer4.setRepeats(false);
