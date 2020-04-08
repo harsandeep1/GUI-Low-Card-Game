@@ -27,12 +27,12 @@ public class GUICard
       {
          for(int numCardValue = 0; numCardValue < 14; numCardValue++)
          {
-            iconCards[numCardValue][numSuit] = new ImageIcon("../images/" + 
+            iconCards[numCardValue][numSuit] = new ImageIcon("images/" + 
                   intToCardValue(numCardValue) + intToSuit(numSuit) + ".gif");
          }      
       }
       
-      iconBack = new ImageIcon("../images/" + "BK" + ".gif");
+      iconBack = new ImageIcon("images/" + "BK" + ".gif");
       
       iconsLoaded = true;
    }
@@ -47,6 +47,7 @@ public class GUICard
       
       int cardValueNum = cardValueToInt(card.getValue());
       int suitNum = suitToInt(card.getSuit());
+    
       if(cardValueNum == -1 || suitNum == -1)
          return iconBack;
       else

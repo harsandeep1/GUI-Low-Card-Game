@@ -60,7 +60,7 @@ public class Hand {
    //sort the hand by calling the arraySort() method in the Card class
    void sort()
    {
-      Card.arraySort(myCards, myCards.length);
+      Card.arraySort(myCards, numCards);
    }
    
    //revised method that removes the card at a location and slides

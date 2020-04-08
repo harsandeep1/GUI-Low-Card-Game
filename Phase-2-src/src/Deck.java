@@ -185,6 +185,10 @@ public class Deck
       
    }
 
+   public int getNumCards(){
+      return getTopCard()+1;
+   }
+
    //Counts the number of a given card in the deck.
    private int countInDeck(Card card)
    {
@@ -195,7 +199,7 @@ public class Deck
          if(card.equals(cards[i]))
             count++;     
       }
-      System.out.println("\n\nThere are " + count + " " + card + " in the deck.");
+      
       return count;
    }
 
